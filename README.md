@@ -85,7 +85,7 @@ For questions or suggestions, feel free to reach out to the author:
 
 - Name: Anshuman Agrawal
 - Email: asquare567@gmail.com
-- Website: asquare567.site
+- Website: [asquare.site](https://www.asquare.site)
 
 ---
 
