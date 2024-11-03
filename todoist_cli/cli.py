@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-from commands import add, delete, list_task, sync
+from todoist_cli.commands import add, delete, list_task, sync
 from dotenv import load_dotenv, set_key
 
 load_dotenv()
