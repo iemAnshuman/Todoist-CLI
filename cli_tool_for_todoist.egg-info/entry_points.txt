@@ -1,0 +1,5 @@
+[console_scripts]
+todo-add = todoist_cli.cli:main
+todo-delete = todoist_cli.cli:main
+todo-list = todoist_cli.cli:main
+todo-sync = todoist_cli.cli:main

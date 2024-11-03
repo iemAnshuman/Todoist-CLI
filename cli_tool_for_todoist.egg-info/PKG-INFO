@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: cli-tool-for-todoist
+Version: 0.1
+Summary: A CLI tool for managing Todoist tasks
+Author: Anshuman Agrawal
+Author-email: asquare567@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE

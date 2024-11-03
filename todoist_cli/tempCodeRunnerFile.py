@@ -1,0 +1,1 @@
+parser_sync = subparsers.add_parser("sync", help="Sync tasks")
