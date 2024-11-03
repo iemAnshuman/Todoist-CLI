@@ -14,7 +14,7 @@ A simple command-line interface (CLI) tool for managing Todoist tasks. With this
 To install the Todoist CLI, you need Python 3.6 or later. You can install it via pip:
 
 ```bash
-pip install cli-tool-for-todoist==0.1
+pip install cli-tool-for-todoist
 ```
 
 ## Usage
