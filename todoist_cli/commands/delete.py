@@ -1,5 +1,5 @@
 # commands/delete.py
-from client import TodoistClient
+from todoist_cli.client import TodoistClient
 
 def delete_task(api_token, task_id):
     client = TodoistClient(api_token)

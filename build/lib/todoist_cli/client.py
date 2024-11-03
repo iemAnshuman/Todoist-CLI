@@ -3,7 +3,7 @@ import requests
 from requests.exceptions import HTTPError
 
 class TodoistClient:
-    BASE_URL = "https://api.todoist.com/rest/v1/"
+    BASE_URL = "https://api.todoist.com/rest/v2/"
 
     def __init__(self, api_token):
         self.api_token = api_token

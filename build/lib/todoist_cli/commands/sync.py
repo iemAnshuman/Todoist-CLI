@@ -1,6 +1,6 @@
 # commands/sync.py
-from client import TodoistClient
-from models.task import Task
+from todoist_cli.client import TodoistClient
+from todoist_cli.models.task import Task
 
 def sync_tasks(api_token):
     client = TodoistClient(api_token)

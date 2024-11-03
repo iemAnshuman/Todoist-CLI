@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="cli_tool_for_todoist",
-    version="0.2",
+    version="0.3",
     description="A CLI tool for managing Todoist tasks",
     author="Anshuman Agrawal",
     author_email="asquare567@gmail.com",
@@ -10,10 +10,7 @@ setup(
     install_requires=["requests"],
     entry_points={
         "console_scripts": [
-            "todo-add=todoist_cli.cli:main",
-            "todo-delete=todoist_cli.cli:main",
-            "todo-list=todoist_cli.cli:main",
-            "todo-sync=todoist_cli.cli:main",
+            "todo=todoist_cli.cli:main",  # Main entry point only
         ],
     },
     classifiers=[

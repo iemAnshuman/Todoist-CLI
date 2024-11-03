@@ -1,6 +1,6 @@
 # commands/list.py
-from client import TodoistClient
-from models.task import Task
+from todoist_cli.client import TodoistClient
+from todoist_cli.models.task import Task
 
 def list_tasks(api_token, filter=None):
     client = TodoistClient(api_token)

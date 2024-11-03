@@ -1,6 +1,5 @@
 import argparse
 import os
-import sys
 from todoist_cli.commands import add, delete, list_task, sync
 from dotenv import load_dotenv, set_key
 
@@ -9,15 +8,17 @@ load_dotenv()
 API_TOKEN_ENV_VAR = "TODOIST_API_TOKEN"
 ENV_FILE = ".env"
 
-def main():
-    # Ensure API token is set
+def get_api_token():
     api_token = os.getenv(API_TOKEN_ENV_VAR)
-    while not api_token:
+    if not api_token:
         api_token = input(f"Please enter your {API_TOKEN_ENV_VAR}: ")
-        
         with open(ENV_FILE, 'a') as env_file:
             set_key(ENV_FILE, API_TOKEN_ENV_VAR, api_token)
-    
+    return api_token
+
+def main():
+    api_token = get_api_token()
+
     # Create the main parser
     parser = argparse.ArgumentParser(prog="todo", description="Todoist CLI Tool")
     subparsers = parser.add_subparsers(dest="command")
@@ -56,3 +57,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

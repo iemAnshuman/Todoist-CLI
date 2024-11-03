@@ -1,5 +1,5 @@
 # commands/add.py
-from client import TodoistClient
+from todoist_cli.client import TodoistClient
 
 def add_task(api_token, content, due_string=None, priority=1):
     client = TodoistClient(api_token)
