@@ -25,14 +25,15 @@ class TodoistClient:
         except Exception as err:
             print(f"An error occurred: {err}")
 
-    def add_task(self, content, due_string=None, priority=1):
+    def add_task(self, content, due_string=None, priority=1, labels=None):
         """
         Add a new task to Todoist.
         """
         task_data = {
             "content": content,
             "due_string": due_string,
-            "priority": priority
+            "priority": priority,
+            "labels": []
         }
         return self._request("tasks", method="POST", data=task_data)
 

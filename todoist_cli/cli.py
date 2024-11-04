@@ -28,6 +28,7 @@ def main():
     parser_add.add_argument("content", help="Task content")
     parser_add.add_argument("--due", help="Due date")
     parser_add.add_argument("--priority", type=int, choices=[1, 2, 3, 4], help="Priority level")
+    parser_add.add_argument("p", help="prompt") # incomplete
 
     # Delete task
     parser_delete = subparsers.add_parser("delete", help="Delete a task")
@@ -36,6 +37,7 @@ def main():
     # List tasks
     parser_list = subparsers.add_parser("list", help="List tasks")
     parser_list.add_argument("--filter", help="Filter tasks")
+    parser_list.add_argument("p", help="prompt") # incomplete
 
     # Sync tasks
     parser_sync = subparsers.add_parser("sync", help="Sync tasks")
@@ -45,10 +47,15 @@ def main():
 
     # Dispatch the command
     if args.command == "add":
+        if args.p:
+            args.due = input("Enter due date: ")
+            args.priority = int(input("Enter priority level (1-4): "))
         add.add_task(api_token, args.content, args.due, args.priority)
     elif args.command == "delete":
         delete.delete_task(api_token, args.task_id)
     elif args.command == "list":
+        if args.p:
+            args.filter = input("Enter filter: ")
         list_task.list_tasks(api_token, args.filter)
     elif args.command == "sync":
         sync.sync_tasks(api_token)

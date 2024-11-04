@@ -22,5 +22,6 @@ todoist_cli/models/project.py
 todoist_cli/models/task.py
 todoist_cli/utils/__init__.py
 todoist_cli/utils/cache.py
+todoist_cli/utils/catppuccin_theme.py
 todoist_cli/utils/config.py
 todoist_cli/utils/date_utils.py
