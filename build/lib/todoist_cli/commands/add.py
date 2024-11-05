@@ -1,9 +1,9 @@
 # commands/add.py
 from todoist_cli.client import TodoistClient
 
-def add_task(api_token, content, due_string=None, priority=1):
+def add_task(api_token, content, due_string=None, priority=1, labels=None):
     client = TodoistClient(api_token)
-    task = client.add_task(content, due_string, priority)
+    task = client.add_task(content, due_string, priority, labels)
     if task:
         print(f"Task '{task['content']}' added with ID: {task['id']}")
     else:

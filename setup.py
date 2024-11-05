@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="cli_tool_for_todoist",
-    version="0.3",
+    version="0.4",
     description="A CLI tool for managing Todoist tasks",
     author="Anshuman Agrawal",
     author_email="asquare567@gmail.com",

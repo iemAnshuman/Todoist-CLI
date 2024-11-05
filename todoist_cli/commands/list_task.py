@@ -1,26 +1,28 @@
-# commands/list_task.py
+# commands/list_tasks.py
 from todoist_cli.client import TodoistClient
 from todoist_cli.models.task import Task
-from todoist_cli.utils.catppuccin_theme import apply_catppuccin_theme
 
-theme = apply_catppuccin_theme()
-
-def list_tasks(api_token, filter=None):
+def list_tasks(api_token, args):
     client = TodoistClient(api_token)
-    tasks_data = client.list_tasks(filter)
+
+    # Build the filter string based on provided arguments
+    filter_components = []
+    if args.due:
+        filter_components.append(f'due:{args.due}')
+    if args.priority:
+        filter_components.append(f'priority:{args.priority}')
+    if args.project:
+        filter_components.append(f'##{args.project}')
+    if args.label:
+        filter_components.append(f'@{args.label}')
+
+    filter_string = ' & '.join(filter_components) if filter_components else None
+
+    # Fetch tasks using the constructed filter string
+    tasks_data = client.list_tasks(filter_string)
     if tasks_data:
         tasks = [Task.from_dict(task_data) for task_data in tasks_data]
-        for task in tasks:
-            # Assign colors based on priority
-            color = theme[f"priority_{task.priority}"]
-            background = theme["background"]
-            text_color = theme["text"]
-
-            # Use ANSI escape codes for color formatting in the terminal
-            print(f"\033[38;5;{color}m \0{task.content}\033[0m")  # Text color
-
-            # Example: Customize further if needed
-            # print(f"{task.priority}: {task.content} - Due: {task.due_date}")
+        return tasks
     else:
-        print("No tasks found or failed to retrieve tasks.")
-
+        print("No tasks found.")
+        return []

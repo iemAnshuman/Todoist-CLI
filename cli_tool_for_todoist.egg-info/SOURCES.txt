@@ -25,3 +25,4 @@ todoist_cli/utils/cache.py
 todoist_cli/utils/catppuccin_theme.py
 todoist_cli/utils/config.py
 todoist_cli/utils/date_utils.py
+todoist_cli/utils/ui_theme.py
